@@ -1,0 +1,51 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Fraunces:ital,opsz@1,9..144&family=Kanit:wght@400;600&family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:wght@500&display=swap');
+
+.maintext {
+    .roboto-regular {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      .roboto-bold {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+      .roboto-black {
+        font-family: "Roboto", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+      }
+      
+}
+/* Styling for the title */
+h1 {
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 80px;
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Styling for the description */
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #666;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 60px;
+}
+body {
+    background-color: #D8E2DC;
+}
+
+/* CSS */
+
+
+
+
