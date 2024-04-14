@@ -14,7 +14,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const defaultTheme = createTheme();
 
-
+var bgColors = { "Blue": "#354f52",
+                   
+};
 export default function Signin() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,14 +33,16 @@ export default function Signin() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            paddingTop: 10,            
+            // height: '100vh',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
+          
+          <Avatar sx={{ m: 1, bgcolor: bgColors.Blue}}>          
+          <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
@@ -53,6 +57,7 @@ export default function Signin() {
               name="email"
               autoComplete="email"
               autoFocus
+              
             />
             <TextField
               margin="normal"
@@ -63,6 +68,7 @@ export default function Signin() {
               type="password"
               id="password"
               autoComplete="current-password"
+              
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -72,14 +78,17 @@ export default function Signin() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              color="primary"
+              sx={{ mt: 3, mb: 2, bgcolor: bgColors.Blue }}
             >
+              
               Sign In
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="#" variant="body2" >
                   Forgot password?
+                  <Link href="#" variant="body2" color="primary"></Link>
                 </Link>
               </Grid>
               <Grid item>
@@ -89,8 +98,13 @@ export default function Signin() {
               </Grid>
             </Grid>
           </Box>
-        </Box>
+        </Box>    
       </Container>
+      <img src="https://www.creativefabrica.com/wp-content/uploads/2022/09/05/Cartoon-of-donation-food-box-isolated-Graphics-37786816-1.png"/>
     </ThemeProvider>
   );
+
+
 }
+
+
