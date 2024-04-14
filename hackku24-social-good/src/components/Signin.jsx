@@ -80,13 +80,12 @@ export default function Signin() {
               variant="contained"
               color="primary"
               sx={{ mt: 3, mb: 2, bgcolor: bgColors.Blue }}
-            >
-              
+            >              
               Sign In
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2" >
+                <Link href="#" variant="body2">
                   Forgot password?
                   <Link href="#" variant="body2" color="primary"></Link>
                 </Link>

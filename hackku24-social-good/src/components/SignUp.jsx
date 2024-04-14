@@ -18,6 +18,9 @@ import '../css/signinSignup.css';
 
 const defaultTheme = createTheme();
 
+var bgColors = { "Blue": "#354f52",                 
+};
+
 function SignUp() {
   const [isBusiness, setIsBusiness] = useState(false);
   const [startDateDOB, setStartDateDOB] = useState(new Date());
@@ -93,7 +96,7 @@ function SignUp() {
     });
     setExtraInfoBusiness({
       businessName: '',
-      businessType: ''
+      businessType: '',
     });
   };
 
@@ -105,13 +108,13 @@ function SignUp() {
           <CssBaseline />
           <Box
             sx={{
-              marginTop: 8,
+              paddingTop: 10,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <Avatar sx={{ m: 1, bgcolor: bgColors.Blue}}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -238,7 +241,7 @@ function SignUp() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, bgcolor: bgColors.Blue}}
               >
                 Sign Up
               </Button>
@@ -247,6 +250,7 @@ function SignUp() {
           </Box>
         </Container>
       </ThemeProvider>
+      <img src="https://www.creativefabrica.com/wp-content/uploads/2022/09/05/Cartoon-of-donation-food-box-isolated-Graphics-37786816-1.png"/>
 
     </div>
   );
