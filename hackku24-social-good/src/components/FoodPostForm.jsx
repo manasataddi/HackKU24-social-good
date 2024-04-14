@@ -44,15 +44,13 @@ function FoodPostForm() {
           placeholder="Name/Title of the food "
           className="food-post-input"
         />
-        {post.ingredients.map((ingredient, index) => (
-            <input
+        <input
               type="text"
               value={post.ingredient}
-              onChange={(e) => handleIngredientChange(index, e)}
               placeholder="Ingredients"
+              onChange={(e) => setPost({ ...post, ingredients: e.target.value })}
               className="food-post-input"
             />
-        ))}
         <input
           type="text"
           value={post.quantity}

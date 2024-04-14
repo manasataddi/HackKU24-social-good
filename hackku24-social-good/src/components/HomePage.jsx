@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box';
 import '../css/home.css';
 import { colors } from '@mui/material';
+import { Link } from 'react-router-dom';
+import Signin from './Signin';
 
 
 function HomePage() {
@@ -15,8 +17,10 @@ function HomePage() {
            <div> 
             <img src={"https://png.pngtree.com/png-vector/20221024/ourmid/pngtree-tiny-people-standing-near-box-of-donation-food-for-delivery-png-image_6346685.png"}/> 
            </div> 
-                <button className='havefood'> I Have Food</button>
-                <button className='wantfood'> I want Food</button>                
+                <Link to="/login" state={{ isBusinessLogin: true }}
+                ><button className='havefood'> I Have Food</button></Link>
+                <Link to={{pathname: '/login',
+                isBusinessLogin: false }}><button className='wantfood'> I want Food</button></Link>
             </div>           
         
     )

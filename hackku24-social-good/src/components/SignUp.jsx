@@ -8,7 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import CancelIcon from '@mui/icons-material/Cancel';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import DatePicker from "react-datepicker";
@@ -18,10 +18,20 @@ import '../css/signinSignup.css';
 
 const defaultTheme = createTheme();
 
-var bgColors = { "Blue": "#354f52",                 
+var bgColors = {
+  "Blue": "#354f52",
 };
 
 function SignUp() {
+
+  const [loggedIn, setLoggedIn] = useState(false); // Example state for login status
+
+  const handleButtonClick = () => {
+    // Example logic to change the state variable
+    setLoggedIn(true);
+  };
+
+  
   const [isBusiness, setIsBusiness] = useState(false);
   const [startDateDOB, setStartDateDOB] = useState(new Date());
   const [extraInfoBusiness, setExtraInfoBusiness] = useState({
@@ -114,13 +124,13 @@ function SignUp() {
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: bgColors.Blue}}>
-              <LockOutlinedIcon />
+            <Avatar sx={{ m: 1, bgcolor: bgColors.Blue }}>
+              <Link href="/"><CancelIcon style={{ color: 'white' }} /></Link>
             </Avatar>
             <Typography component="h1" variant="h5">
               Sign Up
             </Typography>
-            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <Box sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
                 required
@@ -211,6 +221,7 @@ function SignUp() {
                     type="driverslicense"
                     id="driverslicense"
                   />
+                  <p style={{ color: 'black', marginRight: 10 }}>Date Of Birth</p>
                   <DatePicker className='dobDatePicker' selected={startDateDOB} onChange={(date) => setStartDateDOB(date)} />
                 </>
               )}
@@ -237,20 +248,25 @@ function SignUp() {
                   />
                 </>
               )}
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2, bgcolor: bgColors.Blue}}
-              >
-                Sign Up
-              </Button>
-              
+              {!loggedIn && (
+              <Link href="/login" onClick={()=>{
+                    console.log("something is pressed");
+                  }}>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2, bgcolor: bgColors.Blue }}
+                >
+                  Sign Up
+                </Button>
+              </Link>
+              )}
+
             </Box>
           </Box>
         </Container>
       </ThemeProvider>
-      <img src="https://www.creativefabrica.com/wp-content/uploads/2022/09/05/Cartoon-of-donation-food-box-isolated-Graphics-37786816-1.png"/>
+      <img src="https://www.creativefabrica.com/wp-content/uploads/2022/09/05/Cartoon-of-donation-food-box-isolated-Graphics-37786816-1.png" />
 
     </div>
   );
