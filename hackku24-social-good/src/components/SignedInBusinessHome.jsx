@@ -1,9 +1,13 @@
+import { Avatar, Link, Stack } from '@mui/material'
 import React from 'react'
+import Navbar from './Navbar'
 
-function SignedInHome() {
+function SignedInBusinessHome() {
   return (
-    <div>SignedInHome</div>
+    <div>
+      <Navbar/>
+      </div>
   )
 }
 
-export default SignedInHome
+export default SignedInBusinessHome
