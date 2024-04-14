@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import '../css/foodpostform.css'; // Make sure to create a FoodPostForm.css file for styling
-// import { addToArr } from '../utils/fetchFromAPI';
+import { addToArr, getAllFoods } from '../utils/fetchFromAPI';
 
 var bgColors = { "Blue": "#354f52",                 
 };
 
 function FoodPostForm() {
   const [post, setPost] = useState({
-    title: '',
+    foodId: '',
+    foodName: '',
+    businessName: '',
+    imgSrc: 'https://cdn1.vectorstock.com/i/1000x1000/01/40/healthy-food-cartoon-vector-22230140.jpg',
     ingredients: '',
     quantity: '',
     location: '',
@@ -28,7 +31,17 @@ function FoodPostForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Submit your post data here
-    
+    var thingToAdd = {
+      "foodId": getAllFoods.length+1,
+      "foodName": post.foodName,
+      "foodBestBy": post.useBy,
+      "imgUrl": post.imgSrc,
+      "foodQuantity": post.quantity,
+      "foodPostedBy": post.businessName,
+      "foodLocation": post.location,
+      "pickUpTime": post.pickupTime
+  }
+    addToArr(thingToAdd)
     console.log(post);
   };
 
@@ -61,8 +74,8 @@ function FoodPostForm() {
         />
         <input
           type="text"
-          value={post.location}
-          onChange={(e) => setPost({ ...post, location: e.target.value })}
+          value={post.businessName}
+          onChange={(e) => setPost({ ...post, businessName: e.target.value })}
           placeholder="Business/Resturant Name"
           className="food-post-input"
         />

@@ -17,7 +17,7 @@
 //     return data;
 // }
 
-export const getAllFoods = [{
+const getAllFoods = [{
         "foodId": 111,
         "foodName": "Chana Tikka Masala",
         "foodBestBy": "April 17",
@@ -69,8 +69,8 @@ export const getAllFoods = [{
     }
     ];
 
-    // function addToArr(element) {
-    //     arr.push(element);
-    //   }
+    function addToArr(element) {
+        getAllFoods.push(element);
+      }
       
-    //   export { arr, addToArr };
+      export { getAllFoods, addToArr };

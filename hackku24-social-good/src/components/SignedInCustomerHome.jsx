@@ -10,7 +10,7 @@ function SignedInCustomerHome() {
 
   const renderComponent = () => {
     if (selectedNav === "Track Order") {
-      return <Orders />;
+      return;
     } else {
       return < ViewAllFoods />;
     }
