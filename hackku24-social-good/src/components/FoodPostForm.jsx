@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../css/foodpostform.css'; // Make sure to create a FoodPostForm.css file for styling
-
+// import { addToArr } from '../utils/fetchFromAPI';
 
 var bgColors = { "Blue": "#354f52",                 
 };
@@ -8,7 +8,7 @@ var bgColors = { "Blue": "#354f52",
 function FoodPostForm() {
   const [post, setPost] = useState({
     title: '',
-    ingredients: [''],
+    ingredients: '',
     quantity: '',
     location: '',
     pickupTime: '',
@@ -28,6 +28,7 @@ function FoodPostForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Submit your post data here
+    
     console.log(post);
   };
 
@@ -86,11 +87,12 @@ function FoodPostForm() {
           placeholder="Best if Used By"
           className="food-post-input"
         />
-      <button style={{ backgroundColor: bgColors.Blue }} type="submit" className="submit-post-button">Submit Post</button>
+        <button style={{ backgroundColor: bgColors.Blue }} type="submit" className="submit-post-button">Submit Post</button>
+      
       </form>
       </div>
       <div>
-      <img src="https://www.creativefabrica.com/wp-content/uploads/2022/09/05/Cartoon-of-donation-food-box-isolated-Graphics-37786816-1.png"/>
+      <img src="https://png.pngtree.com/png-vector/20230103/ourmid/pngtree-charity-and-donating-food-concept-png-image_6549098.png"/>
       </div>
       </div>
   );

@@ -8,7 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import CancelIcon from '@mui/icons-material/Cancel';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -16,7 +16,7 @@ import { useLocation } from 'react-router-dom';
 const defaultTheme = createTheme();
 
 
-var bgColors = { "Blue": "#354f52",
+var bgColors = { "Blue": "#354f52" 
                    
 };
 export default function Signin() {
@@ -51,6 +51,7 @@ export default function Signin() {
           sx={{
             paddingTop: 10,            
             // height: '100vh',
+            // width: '30vh',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -58,7 +59,7 @@ export default function Signin() {
         >
           
           <Avatar sx={{ m: 1, bgcolor: bgColors.Blue}}>          
-          <Link href="/"><CancelIcon style={{color:'white'}}/></Link>
+          <AccountCircleIcon style={{color:'white'}}/>
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
@@ -97,7 +98,7 @@ export default function Signin() {
             variant="contained"
             color="primary"
             onClick={handleClick}
-            sx={{ mt: 3, mb: 2, bgcolor: bgColors.Blue }}
+            sx={{ mt: 3, mb: 2, bgcolor: bgColors.Blue}}
           >              
             Sign In
           </Button>

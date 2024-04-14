@@ -30,7 +30,7 @@ function SignedInCustomerHome() {
           margin: '10px',
         }}
       >
-        <Avatar />
+        <Avatar sx={{ bgcolor: '#354f52' }}/>
         <Button className='buttonViewPostsNav'
           style={{
             background: selectedNav === "View Posts" && '#354f52',
@@ -58,10 +58,10 @@ function SignedInCustomerHome() {
       <Link href="/">
         <Button className='logOutBtn'
           style={{
-            background: 'red',
+            background: '#354f52',
             marginLeft:'20px'
           }}>
-          <span style={{ color: 'white' }}>
+          <span style={{ color: 'white'}}>
             {"Log Out"}
           </span>
         </Button>

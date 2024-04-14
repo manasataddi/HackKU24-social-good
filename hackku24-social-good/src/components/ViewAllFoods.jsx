@@ -7,23 +7,36 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import '../css/viewAllFoods.css';
 
-
+var bgColors = { "Blue": "#354f52"
+                   
+};
 function ViewAllFoods() {
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2} style={{margin:'20px'}}>
+    <div className="page-container" style={{ height:'100vh', 
+    paddingTop: '20px',
+    paddingBottom: '20px',
+    backgroundImage: `url('https://c4.wallpaperflare.com/wallpaper/780/572/955/pastel-pink-morning-blur-wallpaper-thumb.jpg')`, 
+    backgroundSize: 'cover',
+    height: '100vh',
+    }}>
+    <Stack direction="row" className="posts-stack"flexWrap="wrap" justifyContent="start" gap={10} style={{margin:'20px'}}>
         {getAllFoods.map(item => (
             <Box key={item.foodId}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ borderRadius: 5, width: 350, background: '#d8e2dc' }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="/foodPic.png"
+          image = {item.imgUrl}
         title="green iguana"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+
+      <CardContent className="card-content">
+        <Typography gutterBottom variant="h5" component="div" className="typography-text"
+        sx={{}}>
           {item.foodName}
         </Typography>
+
         <Typography variant="body2" color="text.secondary">
           <div>
             Food By: {item.foodPostedBy}<br/>
@@ -35,14 +48,14 @@ function ViewAllFoods() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">quantity: {item.foodQuantity}</Button>
-        <Button size="small">Order</Button>
+        <Button size="small" className="button-small">quantity: {item.foodQuantity}</Button>
+        <Button size="small" className="button-small">Order</Button>
       </CardActions>
     </Card>
             </Box>
     ))}
     </Stack>
-    
+    </div>
   )
 }
 

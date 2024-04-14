@@ -28,7 +28,7 @@ function SignedInBusinessHome() {
           margin: '10px',
         }}
       >
-        <Avatar />
+        <Avatar sx={{ bgcolor: '#354f52' }}/>
         <Button className='buttonNewPostBusinessNav'
           style={{
             background: selectedNav === "New Post" && '#354f52',
@@ -53,13 +53,13 @@ function SignedInBusinessHome() {
 
         </Button>
 
-      <Link href="/">
+        <Link href="/">
         <Button className='logOutBtn'
           style={{
-            background: 'red',
+            background: '#354f52',
             marginLeft:'20px'
           }}>
-          <span style={{ color: 'white' }}>
+          <span style={{ color: 'white'}}>
             {"Log Out"}
           </span>
         </Button>
@@ -68,7 +68,7 @@ function SignedInBusinessHome() {
       <div>
         {renderComponent()}
       </div>
-
+      
     </div>
   )
 }
