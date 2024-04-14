@@ -33,7 +33,7 @@ function FoodPostForm() {
 
   return (
 
-    <div  style={{ paddingTop: '20px' }}>
+    <div  style={{ paddingTop: '20px', backgroundImage: `url('https://wallpapers.com/images/hd/pastel-gradient-background-3840-x-2160-yyj5vp6chp9is7en.jpg')`, backgroundSize: 'cover' }}>
       
     <div  className="food-post-form-container">
       <form onSubmit={handleSubmit} className="food-post-form">
@@ -45,26 +45,19 @@ function FoodPostForm() {
           className="food-post-input"
         />
         {post.ingredients.map((ingredient, index) => (
-          <div key={index} className="ingredient-field">
             <input
               type="text"
-              value={ingredient}
+              value={post.ingredient}
               onChange={(e) => handleIngredientChange(index, e)}
-              placeholder="Ingredient"
+              placeholder="Ingredients"
               className="food-post-input"
             />
-            {index === post.ingredients.length - 1 && (
-              <button type="button" onClick={addIngredientField} className="add-ingredient-button">
-                Add Ingredient
-              </button>
-            )}
-          </div>
         ))}
         <input
           type="text"
           value={post.quantity}
           onChange={(e) => setPost({ ...post, quantity: e.target.value })}
-          placeholder="Quantity"
+          placeholder="Quantity/Servings"
           className="food-post-input"
         />
         <input
@@ -104,6 +97,7 @@ function FoodPostForm() {
       </div>
   );
 }
+
 
 
 export default FoodPostForm;

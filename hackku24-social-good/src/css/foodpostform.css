@@ -33,3 +33,10 @@
     display: flex;
     flex-direction: column;
   }
+  .food-post-form-container {
+    border: 4px solid white;
+  }
+  /* body{
+    background-image: url('https://wallpapers.com/images/hd/pastel-gradient-background-3840-x-2160-yyj5vp6chp9is7en.jpg');
+
+  } */
